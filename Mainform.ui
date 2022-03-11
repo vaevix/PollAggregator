@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="tk.Toplevel" id="toplevel1">
+    <property name="height">700</property>
+    <property name="minsize">1000|700</property>
+    <property name="width">1000</property>
+    <child>
+      <object class="ttk.Panedwindow" id="panedwindow8">
+        <property name="height">700</property>
+        <property name="orient">horizontal</property>
+        <property name="width">1000</property>
+        <layout manager="pack">
+          <property name="anchor">ne</property>
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Panedwindow.Pane" id="pane1">
+            <property name="weight">1</property>
+            <child>
+              <object class="ttk.Frame" id="frame1">
+                <property name="height">700</property>
+                <property name="width">150</property>
+                <layout manager="pack">
+                  <property name="anchor">ne</property>
+                  <property name="side">top</property>
+                </layout>
+                <child>
+                  <object class="ttk.Labelframe" id="labelframe1">
+                    <property name="height">200</property>
+                    <property name="text" translatable="yes">Source</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="anchor">nw</property>
+                      <property name="expand">true</property>
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="button1">
+                        <property name="text" translatable="yes">Load source</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="expand">true</property>
+                          <property name="fill">x</property>
+                          <property name="padx">20</property>
+                          <property name="pady">10</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Entry" id="entry1">
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="expand">true</property>
+                          <property name="fill">x</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Labelframe" id="labelframe2">
+                    <property name="height">100</property>
+                    <property name="text" translatable="yes">Instituts de sondages
+</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="anchor">nw</property>
+                      <property name="expand">true</property>
+                      <property name="fill">both</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Checkbutton" id="checkbutton8">
+                        <property name="text" translatable="yes">checkbutton8</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Checkbutton" id="checkbutton13">
+                        <property name="text" translatable="yes">checkbutton13</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Labelframe" id="labelframe3">
+                    <property name="height">200</property>
+                    <property name="text" translatable="yes">Paramètres
+</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="anchor">nw</property>
+                      <property name="expand">true</property>
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Label" id="label2">
+                        <property name="anchor">n</property>
+                        <property name="text" translatable="yes">Rolling W=1.0</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">left</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Scale" id="scale1">
+                        <property name="from_">0.0</property>
+                        <property name="orient">horizontal</property>
+                        <property name="to">2.0</property>
+                        <property name="value">1</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="expand">true</property>
+                          <property name="fill">x</property>
+                          <property name="padx">5</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Labelframe" id="labelframe4">
+                    <property name="height">200</property>
+                    <property name="text" translatable="yes">Publication</property>
+                    <property name="width">200</property>
+                    <layout manager="pack">
+                      <property name="anchor">nw</property>
+                      <property name="expand">true</property>
+                      <property name="fill">x</property>
+                      <property name="padx">5</property>
+                      <property name="side">top</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Button" id="button2">
+                        <property name="text" translatable="yes">Save as</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="expand">true</property>
+                          <property name="fill">x</property>
+                          <property name="padx">20</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Button" id="button3">
+                        <property name="text" translatable="yes">Publish on Twitter</property>
+                        <layout manager="pack">
+                          <property name="anchor">nw</property>
+                          <property name="expand">true</property>
+                          <property name="fill">x</property>
+                          <property name="padx">20</property>
+                          <property name="pady">5</property>
+                          <property name="side">top</property>
+                        </layout>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Panedwindow.Pane" id="pane2">
+            <property name="weight">1</property>
+            <child>
+              <object class="tk.Canvas" id="canvas2">
+                <property name="background">#f97578</property>
+                <property name="width">800</property>
+                <layout manager="pack">
+                  <property name="anchor">ne</property>
+                  <property name="expand">true</property>
+                  <property name="fill">both</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
