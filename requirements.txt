@@ -1,1 +1,2 @@
-pygubu>=0.20
+pygubu~=0.20
+matplotlib~=3.5.1
