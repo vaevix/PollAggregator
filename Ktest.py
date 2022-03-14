@@ -3,15 +3,16 @@ from numpy.linalg import inv
 import matplotlib.pyplot as plt
 
 def getMeasurement(updateNumber):
+    actualvalue = 20
     if updateNumber == 1:
-      getMeasurement.currentPosition = 0
-      getMeasurement.currentVelocity = 30 # m/s
+        getMeasurement.currentPosition = actualvalue
+        getMeasurement.currentVelocity = 0 # m/s
     dt = 0.1
-    w = np.random.normal(0, 1.0)
-    v = np.random.normal(0, 1.0)
-    z = getMeasurement.currentPosition + getMeasurement.currentVelocity*dt + v
+    w = np.random.normal(0, 1.5)
+    v = np.random.normal(0, 1.5)
+    z = actualvalue + getMeasurement.currentVelocity*dt + v
     getMeasurement.currentPosition = z - v
-    getMeasurement.currentVelocity = 30 + w
+    getMeasurement.currentVelocity = 0 + w
     return [z, getMeasurement.currentPosition, getMeasurement.currentVelocity]
 
 
@@ -19,8 +20,8 @@ def filter(z, updateNumber):
     dt = 0.1
     # Initialize State
     if updateNumber == 1:
-        filter.x = np.array([[0],
-                            [30]])
+        filter.x = np.array([[20],
+                            [0]])
         filter.P = np.array([[5, 0],
                                  [0, 5]])
         filter.A = np.array([[1, dt],
@@ -47,7 +48,7 @@ def filter(z, updateNumber):
 
 def testFilter():
     dt = 0.2
-    t = np.linspace(0, 10, num=100)
+    t = np.linspace(0, 10, num=50)
     numOfMeasurements = len(t)
     measTime = []
     measPos = []
@@ -55,7 +56,8 @@ def testFilter():
     estDifPos = []
     estPos = []
     estVel = []
-    posBound3Sigma = []
+    lowBound2Sigma = []
+    hiBound2Sigma = []
     for k in range(1,numOfMeasurements):
         z = getMeasurement(k)
         # Call Filter and return new State
@@ -68,29 +70,34 @@ def testFilter():
         estPos.append(f[0])
         estVel.append(f[1])
         posVar = f[2]
-        posBound3Sigma.append(3*np.sqrt(posVar[0][0]))
-    return [measTime, measPos, estPos, estVel, measDifPos, estDifPos, posBound3Sigma]
+        lowBound2Sigma.append(f[0]-2*np.sqrt(posVar[0][0]))
+        hiBound2Sigma.append(f[0] + 2 * np.sqrt(posVar[0][0]))
+    return [measTime, measPos, estPos, estVel, measDifPos, estDifPos, lowBound2Sigma, hiBound2Sigma]
 
 t = testFilter()
-# plot1 = plt.figure(1)
-# plt.scatter(t[0], t[1])
-# plt.plot(t[0], t[2])
-# plt.ylabel('Position')
-# plt.xlabel('Time')
-# plt.grid(True)
-plot2 = plt.figure(1)
-plt.plot(t[0], t[3])
-plt.ylabel('Velocity (meters/seconds)')
-plt.xlabel('Update Number')
-plt.title('Velocity Estimate On Each Measurement Update \n', fontweight="bold")
-plt.legend(['Estimate'])
+plot1 = plt.figure(1)
+plt.scatter(t[0], t[1], color='red')
+plt.plot(t[0], t[2], color='blue')
+plt.plot(t[0], t[6], color='orange')
+plt.plot(t[0], t[7], color='orange')
+
+plt.ylim(0, 30)
+plt.ylabel('Position')
+plt.xlabel('Time')
 plt.grid(True)
+# plot2 = plt.figure(2)
+# plt.plot(t[0], t[1])
+# plt.ylabel('Velocity (meters/seconds)')
+# plt.xlabel('Update Number')
+# plt.title('Velocity Estimate On Each Measurement Update \n', fontweight="bold")
+# plt.legend(['Estimate'])
+# plt.grid(True)
 # plot3 = plt.figure(3)
 # plt.scatter(t[0], t[4], color = 'red')
 # plt.plot(t[0], t[5])
-# plt.legend(['Estimate', 'Measurement'])
+# plt.legend(['Measurement','Estimate'])
 # plt.title('Position Errors On Each Measurement Update \n', fontweight="bold")
-# #plt.plot(t[0], t[6])
+# plt.plot(t[0], t[6])
 # plt.ylabel('Position Error (meters)')
 # plt.xlabel('Update Number')
 # plt.grid(True)
