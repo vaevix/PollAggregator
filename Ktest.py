@@ -1,19 +1,6 @@
-import numpy as np
-from numpy.linalg import inv
-import matplotlib.pyplot as plt
 
-def getMeasurement(updateNumber):
-    actualvalue = 20
-    if updateNumber == 1:
-        getMeasurement.currentPosition = actualvalue
-        getMeasurement.currentVelocity = 0 # m/s
-    dt = 0.1
-    w = np.random.normal(0, 1.5)
-    v = np.random.normal(0, 1.5)
-    z = actualvalue + getMeasurement.currentVelocity*dt + v
-    getMeasurement.currentPosition = z - v
-    getMeasurement.currentVelocity = 0 + w
-    return [z, getMeasurement.currentPosition, getMeasurement.currentVelocity]
+import numpy as np
+
 
 
 def filter(z, updateNumber):
