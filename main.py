@@ -11,10 +11,10 @@ foo.Settings['Candidats'] = {('Jean Lassalle', '#26c4ec', '30'), ('Emmanuel Macr
                              ('Philippe Poutou', '#bb0000', '30'), ('Anne Hidalgo', '#FF8080', '40'),
                              ('Jean-Luc Mélenchon', '#FF8080', '40'), ('Eric Zemmour', '#909090', '50'),
                              ('Yannick Jadot', '#00c000', '30'), ('Marine Le Pen', '#A775FF', '40')}
-    # Base codes couleurs : https://fr.wikipedia.org/wiki/Mod%C3%A8le:Infobox_Parti_politique_fran%C3%A7ais/couleurs
-    # Le canal alpha est utilisé pour assurer la visibilité, en particulier pour les partis de droite.
-    # Exception : gris de Zemmour, bleu de Pécresse, éclaircis pour être mieux visible.
-    # Teinte Le Pen modifiée même raison.
+# Base codes couleurs : https://fr.wikipedia.org/wiki/Mod%C3%A8le:Infobox_Parti_politique_fran%C3%A7ais/couleurs
+# Le canal alpha est utilisé pour assurer la visibilité, en particulier pour les partis de droite.
+# Exception : gris de Zemmour, bleu de Pécresse, éclaircis pour être mieux visible.
+# Teinte Le Pen modifiée même raison.
 
 foo.Settings['From'] = date(2022, 1, 1)
 foo.Settings['To'] = date(2099, 1, 1)
