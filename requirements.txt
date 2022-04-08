@@ -1,4 +1,2 @@
-pygubu~=0.20
 matplotlib~=3.5.1
 numpy~=1.22.3
-pykalman~=0.9.5
