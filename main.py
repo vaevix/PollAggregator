@@ -20,7 +20,7 @@ foo.Settings['From'] = date(2022, 1, 1)
 foo.Settings['To'] = date(2099, 1, 1)
 foo.Settings['Source'] = 'https://raw.githubusercontent.com/nsppolls/nsppolls/master/presidentielle.json'
 
-foo.load(foo.Settings['Source'])
+foo.load()
 foo.formatdata('Premier tour', '*')
 
 foo.getimage(['Emmanuel Macron', 'Marine Le Pen', 'Jean-Luc Mélenchon', 'Valérie Pécresse', 'Eric Zemmour',

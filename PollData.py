@@ -22,9 +22,9 @@ class PollData:
     :param source: URL for the data. http://, https://, ftp://, ftps://. Filepaths should be prefixed with file://.
 
     """
-    def load(self, source: str):
+    def load(self):
 
-        with urllib.request.urlopen(source) as s:
+        with urllib.request.urlopen(self.Settings['Source']) as s:
             self.Data = json.load(s)
         self.PInstitute = set([x['nom_institut'] for x in self.Data])
         for sondage in self.Data:
