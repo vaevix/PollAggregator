@@ -63,7 +63,7 @@ class PollData:
         ax.text(0, 0, '@VaeVix', transform=ax.transAxes, fontsize=60, color='white',
                 alpha=0.2, ha='left', va='bottom', rotation='0')
 
-    def getimage(self, candidatA):
+    def showchart(self, candidatA):
         fig, ax = plt.subplots(nrows=1, ncols=1)
         tf = {'family': 'serif', 'color':  'white', 'weight': 'normal'}
         fig.suptitle('Intentions de vote à l\'élection présidentielle de 2022', fontsize=22, fontdict=tf)

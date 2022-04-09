@@ -23,10 +23,10 @@ foo.Settings['Source'] = 'https://raw.githubusercontent.com/nsppolls/nsppolls/ma
 foo.load()
 foo.formatdata('Premier tour', '*')
 
-foo.getimage(['Emmanuel Macron', 'Marine Le Pen', 'Jean-Luc Mélenchon', 'Valérie Pécresse', 'Eric Zemmour',
-              'Fabien Roussel', 'Yannick Jadot', 'Jean Lassalle', 'Nathalie Arthaud', 'Nicolas Dupont-Aignan',
-              'Philippe Poutou', 'Anne Hidalgo'])
+foo.showchart(['Emmanuel Macron', 'Marine Le Pen', 'Jean-Luc Mélenchon', 'Valérie Pécresse', 'Eric Zemmour',
+               'Fabien Roussel', 'Yannick Jadot', 'Jean Lassalle', 'Nathalie Arthaud', 'Nicolas Dupont-Aignan',
+               'Philippe Poutou', 'Anne Hidalgo'])
 
 foo.formatdata('Deuxième tour', 'Hypothèse Macron / Le Pen')
 
-foo.getimage(['Emmanuel Macron', 'Marine Le Pen'])
+foo.showchart(['Emmanuel Macron', 'Marine Le Pen'])
