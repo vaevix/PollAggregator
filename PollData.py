@@ -14,8 +14,6 @@ class PollData:
     def __init__(self):
         self.Data = []
         self.FormattedData = dict()
-        self.PInstitute = set()
-        self.Candidates = set()
         self.Settings = dict()
     """
     Loads the data from the provided source
@@ -26,13 +24,6 @@ class PollData:
 
         with urllib.request.urlopen(self.Settings['Source']) as s:
             self.Data = json.load(s)
-        self.PInstitute = set([x['nom_institut'] for x in self.Data])
-        for sondage in self.Data:
-            for tour in sondage['tours']:
-                for hypothese in tour['hypotheses']:
-                    for candidat in hypothese['candidats']:
-                        if candidat['candidat'] not in self.Candidates:
-                            self.Candidates.add(candidat['candidat'])
 
     def formatdata(self, tour: str, hypothese: str):
         self.FormattedData = dict(zip([x[0] for x in self.Settings['Candidats']], [[] for _ in self.Settings['Candidats']]))
@@ -111,10 +102,3 @@ class PollData:
 
         self.setchartsettings(fig, ax)
         plt.show()
-
-
-# TODO : Replace with proper script
-
-
-if __name__ == '__main__':
-    pass
